@@ -1,0 +1,140 @@
+html, body {
+
+    padding:0;
+    margin:0;
+
+    #preloader{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        z-index:99;
+        background-color:rgba(255,255,255,0.9);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        &.on{
+            animation:fade-in 0.5s
+        }
+        &.off{
+            animation:fade-out 0.5s
+        }
+    }
+    #info{
+        position:fixed;
+        display:none;
+        width:100%;
+        height:100%;
+        z-index:89;
+        background-color:rgba(255,255,255,0.8);
+        cursor:pointer;
+        &.on{
+            animation:fade-in 0.5s
+        }
+        &.off{
+            animation:fade-out 0.5s
+        }
+        div{
+            position: relative;
+            min-width:200px;
+            min-height:100px;
+            padding:2rem;
+            margin:auto;
+            text-align:center;
+            background-color:#fff;
+            border-radius: 8px;
+            box-shadow:7px 11px 27px -22px rgba(0,0,0,0.75);
+
+            &:after{
+                content: "x";
+                font-size: 1.5rem;
+                position: absolute;
+                right: 0.5rem;
+                top: 0;
+            }
+        }
+    }
+    .container{
+        max-width:800px;
+        input[type="text"]:not(.browser-default) {
+            border-bottom: 1px dashed #cccccc;
+
+            &:focus {
+                border-bottom: 1px solid  #cccccc;
+                box-shadow: 0 1px 0 0 #000;
+            }
+        }
+        form, .relative{
+            position:relative;
+            input[type="text"]:not(.browser-default) {
+                width: 90%;
+            }
+            button {
+                position:absolute;
+                right:0;
+                top:50%;
+                transform: translate(0,-50%);
+            }
+        }
+        #rooms{
+            display:none;
+            #items{
+                li{
+                    padding: 10px 0;
+                    border-bottom: 1px dashed #cccccc;
+                    &:hover{
+                        background-color: #f1f1f1;
+                    }
+                    div{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        #room{
+            display:none;
+            #conversation{
+                height:400px;
+                padding:0.75rem;
+                overflow-x:hidden;
+                box-sizing:border-box;
+                border:1px solid #cccccc;
+                border-radius:8px;
+                .message, .userMessage, .infos{
+                    width:auto;
+                    padding:0.2rem 0.4rem;
+                    margin:5px;
+                    border-bottom:1px solid #cccccc;
+                    border-radius:8px;
+                    i{
+                        font-size:0.8rem;
+                        padding:0;
+                    }
+                }
+                .info{
+                    width:100%;
+                    text-align:center;
+                    font-size:0.8rem
+                }
+                .message{
+                    display:table;
+                    float:left;
+                    background-color:#29b6f6;
+                }
+                .userMessage{
+                    display:table;
+                    float:right;
+                    background-color:#29b6f6;
+                    border-radius:8px;
+                }
+            }
+            #typing{
+                height: 1.5rem;
+                overflow: hidden;
+                text-align:center;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

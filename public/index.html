@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.1/socket.io.js"></script>
+    <script type="module" src="/js/main.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/main.min.css">
+
+
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="preloader-wrapper small active">
+            <div class="spinner-layer spinner-blue-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div>
+              <div class="gap-patch">
+                <div class="circle"></div>
+              </div>
+              <div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="info">
+        <div></div>
+    </div>
+
+    <main class="container">
+
+        <section class="section">
+            <h4>MyChat</h4>  
+        </section>
+
+        <section id="rooms">
+
+            <div class="section">
+                <h6>Enter your username:</h6>
+                    <input type="text" id="username" maxlength="30" autofocus placeholder="Username">
+                </div>
+            </div>
+
+            <div class="section">
+                <h6>Choose a room:</h6>
+                <ul id="items" class="col s12">
+                     <li>No rooms</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h6>Create a new room:</h6>
+                <form id="formNewRoom" autocomplete="off">
+                    <input type="text" id="newRoom" maxlength="60" placeholder="New room">
+                    <button class="btn-floating btn-large waves-effect right light-blue lighten-1" type="submit" value="Submit">
+                        <i class="material-icons">add</i>
+                    </button>
+                </form>
+            </div>
+            
+        </section>
+
+        <section id="room">
+            
+            <div class="section relative">
+                <h6 id="roomname"></h6>
+                <button class="btn-floating btn-large light-blue lighten-1" id="btnExit" >
+                    <i class="material-icons">exit_to_app</i>
+                </button>
+            </div>
+
+            <div class="section">
+                <div id="conversation"></div>
+                <div id="typing"></div>
+                <form id="formMessage" autocomplete="off" >
+                    <input type="text" id="message" name="message" maxlength="500" placeholder="Message">
+                    <button class="btn-floating btn-large light-blue lighten-1" type="submit" value="Submit">
+                        <i class="material-icons">message</i>
+                    </button>
+                </form>
+            </div>
+
+        </section>
+
+    </main>
+    
+    
+</body>
+</html>
